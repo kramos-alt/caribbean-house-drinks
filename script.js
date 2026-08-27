@@ -6,12 +6,13 @@
   var supported = ['en', 'es'];
 
   function getInitialLang() {
+    // Default language is English. A visitor's explicit choice (via the
+    // toggle) is remembered and wins on future visits.
     try {
       var saved = localStorage.getItem(STORE_KEY);
       if (saved && supported.indexOf(saved) !== -1) return saved;
     } catch (e) {}
-    var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
-    return nav === 'es' ? 'es' : 'en';
+    return 'en';
   }
 
   function applyLang(lang) {
