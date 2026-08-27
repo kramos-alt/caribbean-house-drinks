@@ -175,6 +175,40 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0}
 .sig-type{color:var(--fuchsia);font-size:13px;font-weight:600;margin:0 0 10px;letter-spacing:.02em}
 .sig-ing{color:var(--muted);font-size:14px;margin:0;line-height:1.5}
 
+/* ===== Classes & Training ===== */
+.classes{position:relative;overflow:hidden;background:
+  radial-gradient(70% 55% at 15% 15%,rgba(46,196,182,.08),transparent 60%),
+  linear-gradient(180deg,var(--bg),var(--bg-2));}
+.bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.bubbles span{position:absolute;bottom:-30px;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,rgba(215,181,109,.5),rgba(215,181,109,.04));
+  animation-name:rise;animation-timing-function:linear;animation-iteration-count:infinite;opacity:0}
+@keyframes rise{
+  0%{transform:translateY(0) scale(.5);opacity:0}
+  12%{opacity:.65}
+  85%{opacity:.4}
+  100%{transform:translateY(-104vh) scale(1);opacity:0}
+}
+.classes .container{position:relative;z-index:1}
+.class-features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:26px}
+.class-feature{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--surface),var(--bg-2));
+  border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.class-feature::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(231,207,154,.14),transparent);transform:skewX(-18deg);transition:left .6s ease}
+.class-feature:hover{transform:translateY(-6px);border-color:rgba(215,181,109,.5);box-shadow:var(--shadow)}
+.class-feature:hover::after{left:120%}
+.class-ico{font-size:34px;display:block;margin-bottom:14px}
+.class-feature h3{font-size:22px;margin-bottom:10px}
+.class-feature p{color:var(--muted);font-size:14.5px;margin:0}
+.class-tastings{border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.02);padding:22px 24px}
+.ct-label{margin:0 0 14px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.taste-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0}
+.taste-list li{display:flex;align-items:center;gap:9px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:500;transition:border-color .2s ease,transform .2s ease}
+.taste-list li:hover{border-color:var(--gold);transform:translateY(-2px)}
+.taste-ico{font-size:17px}
+.classes-cta{text-align:center;margin:30px 0 0}
+
 /* ===== Gallery ===== */
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px}
 .gallery-grid figure{margin:0;border-radius:14px;overflow:hidden;position:relative}
@@ -235,6 +269,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0}
   .header-actions .btn-primary{display:none}
   .cards{grid-template-columns:1fr}
   .sig-cards{grid-template-columns:1fr}
+  .class-features{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
   .g-wide{grid-column:span 2}
   .hero-badges{gap:22px}
